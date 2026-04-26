@@ -30,12 +30,12 @@ log = get_logger(__name__)
 # ── Weapon stats from combat-items.md ─────────────────────────────────
 WEAPONS = {
     "fist": {"bonus": 0, "range": 0},
-    "dagger": {"bonus": 10, "range": 0},
-    "sword": {"bonus": 20, "range": 0},
-    "katana": {"bonus": 35, "range": 0},
-    "bow": {"bonus": 5, "range": 1},
-    "pistol": {"bonus": 10, "range": 1},
-    "sniper": {"bonus": 28, "range": 2},
+    "dagger": {"bonus": 299, "range": 0},
+    "sword": {"bonus": 800, "range": 0},
+    "katana": {"bonus": 500, "range": 0},
+    "bow": {"bonus": 100, "range": 5},
+    "pistol": {"bonus": 2000, "range": 6},
+    "sniper": {"bonus": 2888, "range": 7},
 }
 
 WEAPON_PRIORITY = ["katana", "sniper", "sword", "pistol", "dagger", "bow", "fist"]
@@ -58,7 +58,7 @@ ITEM_PRIORITY = {
 # For critical healing (HP<30): prefer Bandage then Medkit
 RECOVERY_ITEMS = {
     "medkit": 50, "bandage": 30, "emergency_food": 20,
-    "energy_drink": 0,  # EP restore, not HP
+    "energy_drink": 50,  # EP restore, not HP
 }
 
 # Weather combat penalty per game-systems.md
@@ -157,11 +157,11 @@ def decide_action(view: dict, can_act: bool, memory_temp: dict = None) -> dict |
     """
     self_data = view.get("self", {})
     region = view.get("currentRegion", {})
-    hp = self_data.get("hp", 100)
-    ep = self_data.get("ep", 10)
-    max_ep = self_data.get("maxEp", 10)
-    atk = self_data.get("atk", 10)
-    defense = self_data.get("def", 5)
+    hp = self_data.get("hp", 1000)
+    ep = self_data.get("ep", 1000)
+    max_ep = self_data.get("maxEp", 100)
+    atk = self_data.get("atk", 100)
+    defense = self_data.get("def", 100)
     is_alive = self_data.get("isAlive", True)
     inventory = self_data.get("inventory", [])
     equipped = self_data.get("equippedWeapon")
