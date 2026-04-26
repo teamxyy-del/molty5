@@ -7,9 +7,9 @@ from bot.utils.logger import get_logger
 log = get_logger(__name__)
 
 # Group 1 actions (trigger 60s cooldown)
-COOLDOWN_ACTIONS = {"move", "attack", "use_item", "interact", "rest"}
+COOLDOWN_ACTIONS = {"move", "use_item", "interact", "rest"}
 # Group 2 actions (no cooldown)
-FREE_ACTIONS = {"pickup", "equip", "talk", "whisper", "broadcast"}
+FREE_ACTIONS = {"pickup", "equip", "talk", "whisper", "broadcast", "attack"}
 
 
 class ActionSender:
