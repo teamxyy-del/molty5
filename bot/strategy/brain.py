@@ -29,10 +29,10 @@ log = get_logger(__name__)
 
 # ── Weapon stats from combat-items.md ─────────────────────────────────
 WEAPONS = {
-    "fist": {"bonus": 0, "range": 0},
-    "dagger": {"bonus": 299, "range": 0},
-    "sword": {"bonus": 800, "range": 0},
-    "katana": {"bonus": 500, "range": 0},
+    "fist": {"bonus": 100, "range": 0},
+    "dagger": {"bonus": 299, "range": 5},
+    "sword": {"bonus": 800, "range": 5},
+    "katana": {"bonus": 500, "range": 4},
     "bow": {"bonus": 100, "range": 5},
     "pistol": {"bonus": 2000, "range": 6},
     "sniper": {"bonus": 2888, "range": 7},
@@ -57,8 +57,8 @@ ITEM_PRIORITY = {
 # For normal healing (HP<70): prefer Emergency Food (save Bandage/Medkit)
 # For critical healing (HP<30): prefer Bandage then Medkit
 RECOVERY_ITEMS = {
-    "medkit": 50, "bandage": 30, "emergency_food": 20,
-    "energy_drink": 50,  # EP restore, not HP
+    "medkit": 5000, "bandage": 3000, "emergency_food": 2000,
+    "energy_drink": 500,  # EP restore, not HP
 }
 
 # Weather combat penalty per game-systems.md
